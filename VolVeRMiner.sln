@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolVeRMiner", "VolVeRMiner\VolVeRMiner.csproj", "{E51D38E5-2D5B-4720-9066-0CF4CA438A21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E51D38E5-2D5B-4720-9066-0CF4CA438A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51D38E5-2D5B-4720-9066-0CF4CA438A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51D38E5-2D5B-4720-9066-0CF4CA438A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51D38E5-2D5B-4720-9066-0CF4CA438A21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34D35CAA-DE6E-49B5-A851-0890C90AFEC3}
+	EndGlobalSection
+EndGlobal
