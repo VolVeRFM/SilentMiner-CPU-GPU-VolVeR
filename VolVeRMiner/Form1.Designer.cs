@@ -70,10 +70,11 @@ namespace VolVeRMiner
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -280,6 +281,7 @@ namespace VolVeRMiner
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel13.Controls.Add(this.comboBox1);
             this.panel13.Controls.Add(this.label8);
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Location = new System.Drawing.Point(476, 212);
@@ -292,7 +294,7 @@ namespace VolVeRMiner
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(12, 10);
+            this.label8.Location = new System.Drawing.Point(12, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 28);
             this.label8.TabIndex = 5;
@@ -516,6 +518,21 @@ namespace VolVeRMiner
             this.panel20.Size = new System.Drawing.Size(144, 522);
             this.panel20.TabIndex = 100;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 30);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "...";
+            this.button1.UseCompatibleTextRendering = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -557,20 +574,23 @@ namespace VolVeRMiner
             this.label11.TabIndex = 5;
             this.label11.Text = "Build";
             // 
-            // button1
+            // comboBox1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "...";
-            this.button1.UseCompatibleTextRendering = true;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "RegSvcs.exe & vbc.exe",
+            "InstallUtil.exe & AddInUtil.exe",
+            "jsc.exe & EdmGen.exe",
+            "ngentask.exe & vbc.exe",
+            "DataSvcUtil.exe & aspnet_state"});
+            this.comboBox1.Location = new System.Drawing.Point(120, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(300, 21);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.Text = "RegSvcs.exe & vbc.exe";
             // 
             // Form1
             // 
@@ -588,7 +608,8 @@ namespace VolVeRMiner
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "VolVeR Form Builder";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -667,6 +688,7 @@ namespace VolVeRMiner
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

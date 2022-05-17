@@ -24,6 +24,8 @@ namespace VolVeR
         public static string FileName = "winupdater" + ".exe";
         public static string disableDefenderNotifications = "defender";
         public static string bypassUAC = "uac";
+        public static string antiSandbox = "antisand";
+        public static string antiDebugger = "debug";
 
 
     }
